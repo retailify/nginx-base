@@ -1,4 +1,4 @@
-# Base-Nginx
+# Nginx-Base Docker Container
 
 This images was build from the official NGINX source with compiled modules as described in the headline.
 
