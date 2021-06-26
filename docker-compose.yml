@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+    web:
+        build:
+            context: ./alpine/
+            args:
+                ENABLED_MODULES: ndk lua brotli geoip2 headers-more modsecurity
+        image: jproxx/nginx-base:alpine-1.21.0
+        ports:
+            - '8000:8000'
