@@ -38,3 +38,25 @@ http {
    include /etc/nginx/conf.d/*.conf;
 }
 ```
+
+## Enable Lua support
+
+Put this in your `nginx.conf` to load Lua. 
+
+```
+load_module modules/ndk_http_module.so;
+load_module modules/ngx_http_lua_module.so;
+```
+
+And this into your `default.conf`.
+
+```
+server {
+  # other server stuff
+
+  location /example {
+    content_by_lua_block {
+      ngx.say("OK")
+    }
+  }
+}
